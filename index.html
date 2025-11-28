@@ -5,7 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYC PM2.5 & Traffic Volume Analysis</title>
     <link rel="stylesheet" href="static/css/style.css">
+
+    <style>
+        .image-center,
+        .image-row > div {
+            overflow: hidden;
+        }
+
+        .image-center img,
+        .image-row img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: zoom-in;
+        }
+
+        .image-center img:hover,
+        .image-row img:hover,
+        .image-center img:active,
+        .image-row img:active {
+            transform: scale(1.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+    </style>
 </head>
+
 
 <body>
 
