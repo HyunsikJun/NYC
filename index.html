@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,24 @@
     <link rel="stylesheet" href="static/css/style.css">
 
     <style>
+        /* Let zoomed images overflow instead of being cut */
         .image-center,
         .image-row > div {
-            overflow: hidden;
+            overflow: visible;
+            position: relative;
         }
 
+        /* Base image behavior: smooth animation + zoom cursor */
         .image-center img,
         .image-row img {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: zoom-in;
+            position: relative;
+            z-index: 2;              /* make image sit on top of nearby content */
+            transform-origin: center top;  /* zoom mostly downward */
         }
 
+        /* Hover (mouse) + Active (finger tap) zoom */
         .image-center img:hover,
         .image-row img:hover,
         .image-center img:active,
@@ -27,7 +35,6 @@
         }
     </style>
 </head>
-
 
 <body>
 
